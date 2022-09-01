@@ -1,0 +1,14 @@
+[
+    {
+        "name":"Lord of the Rings",
+        "weblink":"https://en.wikipedia.org/wiki/The_Lord_of_the_Rings"
+    },
+    {
+        "name":"The Wheel of Time",
+        "weblink":"https://en.wikipedia.org/wiki/The_Wheel_of_Time"
+    },
+    {
+        "name":"Elephant and Piggie",
+        "weblink":"https://en.wikipedia.org/wiki/Elephant_and_Piggie"
+    }
+]

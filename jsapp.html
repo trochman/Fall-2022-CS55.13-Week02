@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Tony Rochman CS55.13 Week 02 Node.js + React Basics</title>
+
+  <style>
+    h1
+    {
+      color:red;
+      text-align: center;
+      margin-top: 5%;
+    }
+    a:link
+      {
+        text-decoration: none;
+      }
+    ul 
+      {
+		    margin: 0;
+		    padding: 0;
+		    list-style-type: none;
+        text-align: center;
+	    }
+
+    li 
+      {
+        padding: 20px;
+	    }
+  </style>
+  
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://unpkg.com/react/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom/umd/react-dom.development.js" crossorigin></script>
+	<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <h1>My Favorite Book Series</h1>
+	<div id="jsApp"></div>
+
+  <script type="text/babel">
+  "use strict";
+
+    function ProjectList(props) {
+      return <div>
+          <ul>
+            {
+              props.list.map( 
+                (listItem,count) => (
+                  <li key={count}>
+                    <a href={listItem.weblink}>
+                      {listItem.name}
+                    </a>
+                  </li>
+                )
+              )
+            }
+          </ul>
+        </div>;
+    }
+
+  $.getJSON("done_son", function(jsonData) {
+    const myRoot = ReactDOM.createRoot(document.getElementById('jsApp'));
+    myRoot.render(
+      <ProjectList list={jsonData} />
+    );
+  }
+  );
+  </script>
+</body>
+
+</html>
